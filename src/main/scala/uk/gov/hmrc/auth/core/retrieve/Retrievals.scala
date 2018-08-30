@@ -56,9 +56,9 @@ trait Retrievals {
     affinityGroup and agentCode and agentInformation and credentialRole and
     description and groupIdentifier and unreadMessageCount
 
-  val itmpName: Retrieval[ItmpName] = SimpleRetrieval("itmpName", ItmpName.reads)
+  val itmpName: Retrieval[Option[ItmpName]] = OptionalRetrieval("itmpName", ItmpName.reads)
   val itmpDateOfBirth: Retrieval[Option[LocalDate]] = OptionalRetrieval("itmpDateOfBirth", RestFormats.localDateRead)
-  val itmpAddress: Retrieval[ItmpAddress] = SimpleRetrieval("itmpAddress", ItmpAddress.reads)
+  val itmpAddress: Retrieval[Option[ItmpAddress]] = OptionalRetrieval("itmpAddress", ItmpAddress.reads)
 
   val allItmpUserDetails = itmpName and itmpDateOfBirth and itmpAddress
 }
