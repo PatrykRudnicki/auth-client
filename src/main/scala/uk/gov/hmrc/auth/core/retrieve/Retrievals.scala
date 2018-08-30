@@ -43,7 +43,7 @@ trait Retrievals {
   val saUtr: Retrieval[Option[String]] = OptionalRetrieval("saUtr", Reads.StringReads)
 
   val credentials: Retrieval[Credentials] = SimpleRetrieval("credentials", Credentials.reads)
-  val name: Retrieval[Name] = SimpleRetrieval("name", Name.reads)
+  val name: Retrieval[Option[Name]] = OptionalRetrieval("name", Name.reads)
   val dateOfBirth: Retrieval[Option[LocalDate]] = OptionalRetrieval("dateOfBirth", RestFormats.localDateRead)
   val postCode: Retrieval[Option[String]] = OptionalRetrieval("postCode", Reads.StringReads)
   val email: Retrieval[Option[String]] = OptionalRetrieval("email", Reads.StringReads)
